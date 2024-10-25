@@ -5,9 +5,10 @@ import asyncio
 # Telegram API uchun kerakli ma'lumotlar
 api_id = '808393'
 api_hash = '052bb836544996dff795e6db0bee8614'
+bot_token = '7146975082:AAEhfitmmvA-IPCbeR0W0hmRUZJK42evhag'  # Bot tokenini bu yerga qo'shing
 
 # Telegram klientini yaratish
-client = TelegramClient('session_name', api_id, api_hash)
+client = TelegramClient('session_name', api_id, api_hash).start(bot_token=bot_token)
 
 # Quart ilovasini ishga tushiramiz
 app = Quart(__name__)
@@ -47,3 +48,4 @@ if __name__ == '__main__':
         asyncio.run(main())  # Asosiy event loop orqali kodni ishga tushirish
     except (KeyboardInterrupt, SystemExit):
         print("Dastur to'xtatildi.")
+
